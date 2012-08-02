@@ -1,0 +1,16 @@
+{application, agent,
+ [
+  {description, ""},
+  {vsn, "1.0.2"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { agent_app, []}},
+  {env, [{center_url,"http://localhost:9999"},
+         {rooms, ["local"]},
+         {responder_mod, responder},
+         {poll_delay, 500}
+        ]}
+ ]}.

@@ -1,0 +1,10 @@
+ebin/*
+rel/apposs-agent
+rel/src
+*/*.beam
+*~
+*/*~
+logs/*
+.eunit
+*/*.swp
+tags
