@@ -97,7 +97,8 @@ create_clients(BaseUrl, Cmds) ->
         ("") -> [];
         ("ok") -> [];
         (Hosts) ->
-          [HostLine] = lists:filter(fun(E)-> string:len(E) > 0 end, string:tokens(Hosts,"\n")),
+          [HostLine | _] = lists:filter(fun(E)-> string:len(E) > 0 end, string:tokens(Hosts,"\n")),
+          error_logger:error_msg("host info not unique: ~p~n", [Hosts]),
           lib_misc:parse_string(HostLine)
       end
     ),
